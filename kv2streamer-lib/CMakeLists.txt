@@ -88,7 +88,7 @@ add_subdirectory (tool)
 # build a CPack driven installer package
 include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE  
-     "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+     "${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE")
 set (CPACK_PACKAGE_VERSION_MAJOR "${KV2STREAMER_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${KV2STREAMER_VERSION_MINOR}")
 set(CPACK_GENERATOR "DEB")
