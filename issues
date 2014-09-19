@@ -1,0 +1,18 @@
+issue01: malformed packet exception
+
+when: more than 3-4 users are present. This is after enlarging the size of the buffer on the server, otherwise the server will crash due to buffer out of space.
+
+where: client, error msg:
+
+terminate called after throwing an instance of 'osc::MalformedPacketException'
+  what():  element size must be multiple of four
+Aborted
+
+Possible cause: buffer too large, not being received correctly by client
+
+Possible fix:
+- reduce the size of buffer per message by:
+	1. use osc bundle? put each user into 1 message then bundle all of them
+	2. use separate messages without bundling, possible issues with making sure all data arrive.
+
+
