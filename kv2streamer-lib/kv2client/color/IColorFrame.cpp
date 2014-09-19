@@ -13,80 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-#include <gst-wrapper/GstreamerPipelines.h>
 
-#include "ColorFrameStreamer.h"
+#include <kv2client/SharedConfig.h>
 #include "IColorFrame.h"
 
 namespace kv2s {
 
-ColorFrameStreamer::ColorFrameStreamer(std::string ip_address, int port, int latency_milis, std::string network_interface, KV2Client* client)
-: BaseFrameStreamer(client)
-, multicastReceiver(ip_address, port)
+IColorFrame::IColorFrame(ColorFrameStreamerPtr _streamer)
+: streamer(_streamer)
+{}
+
+IColorFrame::~IColorFrame()
 {
-	VideoReceivingMulticastPipelineCreationParameters input;
-	input.multicastIP 		= ip_address;
-	input.port				= port;
-	input.networkInterface	= network_interface;
-	input.pixelFormat		= COLOR_PIXEL_FORMAT_CLIENT;
-	input.outputWidth		= COLOR_MULTICAST_WIDTH;
-	input.outputHeight		= COLOR_MULTICAST_HEIGHT;
-	input.latency			= latency_milis;
+	streamer->FrameDeleted();
+}
+
+unsigned char** IColorFrame::GetColorFrameBufferReferencePtr()
+{
+	return &frameBufferReference;
+}
+
+bool IColorFrame::AccessRawUnderlyingBuffer(UINT* capacity, unsigned char** buffer)
+{
+	*capacity = 3*COLOR_MULTICAST_WIDTH*COLOR_MULTICAST_HEIGHT;
+	*buffer	  = frameBufferReference;
 	
-	multicastReceiver.Initialize(CreateReceive_RGB8_MulticastToAppSink(input));
-	multicastReceiver.SetPipelineState(GST_STATE_PLAYING);
-	
-	std::cout << "[ColorFrameStreamer] Listening to " << ip_address << " at port " << port << std::endl;
-}
-
-ColorFrameStreamerPtr ColorFrameStreamer::GetSharedPtr()
-{
-	if (thisPtr == 0)
-	{
-		thisPtr.reset(this);
-	}
-	return thisPtr;
-}
-
-ColorFrameStreamer::~ColorFrameStreamer()
-{
-}
-
-bool ColorFrameStreamer::AcquireLatestFrame(IColorFramePtr* colorFrame)
-{	
-	if (multicastReceiver.GetIsNewFrameAvailable())
-	{
-		(*colorFrame) = IColorFramePtr( new IColorFrame( GetSharedPtr() ) );
-		
-		if (!multicastReceiver.GetLatestFrameBuffer((void**)(*colorFrame)->GetColorFrameBufferReferencePtr()))
-		{
-			return false; 
-		}
-		return true;
-	} else return false;
-}
-
-void ColorFrameStreamer::FrameDeleted() 
-{
-	multicastReceiver.ReleaseFrameBuffer();
-}
-
-void ColorFrameStreamer::PauseStreaming()
-{
-	BaseFrameStreamer::PauseStreaming();
-	multicastReceiver.set_is_streaming(false);
-}
-
-void ColorFrameStreamer::ResumeStreaming()
-{
-	BaseFrameStreamer::ResumeStreaming();
-	multicastReceiver.set_is_streaming(true);
-}
-
-bool ColorFrameStreamer::get_IsNewFrameAvailable()
-{
-	return multicastReceiver.GetIsNewFrameAvailable();
+	return true;
 }
 
 } // namespace kv2streamer
