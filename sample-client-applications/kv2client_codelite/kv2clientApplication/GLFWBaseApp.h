@@ -16,26 +16,28 @@
 
 #pragma once
 
-#include "AbstractMulticaster.h"
-#include <gst-wrapper/GstAppSrcPipeline.h>
+#include <GLFW/glfw3.h>
 
-#define SUBFRAME_LENGTH 1024
-
-class AudioMulticaster : public AbstractMulticaster
+class GLFWBaseApp
 {
 public:
-	AudioMulticaster(std::string multicastIP, int port);
-	~AudioMulticaster(void);
-
-	virtual HRESULT InitializeMulticasterAndSubscribeHandle(IKinectSensor* kinectSensor, WAITABLE_HANDLE &waitableHandle);
-	virtual void ProcessNewFrame(WAITABLE_HANDLE &waitableHandle);
+	GLFWBaseApp(int WIDTH, int HEIGHT, const char* AppName);
+	~GLFWBaseApp();
+	
+	void Run();
+	
+	virtual void Setup() 	= 0;
+	virtual void Destroy() 	= 0;
+	virtual void Update() 	= 0;
+	virtual void Draw()		= 0;
+	static void ErrorCallback(int error, const char* description);
+	static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
 private:
+	bool isSetup;
 
-	IAudioBeamFrameReader*	audioBeamFrameReader;
-	kv2s::GstAppSrcPipeline	gstSender;
-	UINT					subframeLength;
-	BYTE*					audioSubFrameBuffer;
-	void					ProcessNewAudioSubFrame(IAudioBeamSubFrame* subFrame);
+protected:
+	GLFWwindow* window;
+
+
 };
-

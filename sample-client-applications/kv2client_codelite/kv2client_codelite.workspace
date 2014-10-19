@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="kv2client_codelite" Database="/home/k.wong2/projects/kv2streamer/client/kv2client_codelite/.codelite/kv2client_codelite.tags">
+  <Project Name="kv2clientApplication" Path="kv2clientApplication/kv2clientApplication.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="kv2clientApplication" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="kv2clientApplication" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

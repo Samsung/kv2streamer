@@ -14,25 +14,13 @@
  * limitations under the License.
  */
 
-#pragma once
+#include "KV2ClientExample.h"
 
-#include "AbstractMulticaster.h"
-#include <gst-wrapper/GstAppSrcPipeline.h>
+int main(int argc, char **argv)
+{	
+	KV2ClientExample app(2274,1080,"KV2Client Simple Example");
+	app.Run();
+	exit(EXIT_SUCCESS);
+}
 
-class DepthMulticaster : public AbstractMulticaster
-{
-public:
-	DepthMulticaster(std::string multicastIP, int port);
-	~DepthMulticaster(void);
-
-	virtual HRESULT InitializeMulticasterAndSubscribeHandle(IKinectSensor* kinectSensor, WAITABLE_HANDLE &waitableHandle);
-	virtual void ProcessNewFrame(WAITABLE_HANDLE &waitableHandle);
-
-private:
-
-	IDepthFrameReader*		depthFrameReader;
-	kv2s::GstAppSrcPipeline	gstSender;
-	void					ProcessNewDepthFrame(IDepthFrame* newFrame);
-	UINT16*					pBuffer;
-};
 

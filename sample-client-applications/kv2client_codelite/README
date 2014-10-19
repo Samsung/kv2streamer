@@ -1,0 +1,22 @@
+SUPER IMPORTANT:
+To run the executable, open the terminal, then:
+1. Navigate to the executable director: usually /Debug
+2. Run the following once: $ export LD_LIBRARY_PATH="/usr/local/lib"
+3. Run the executable: $ ./kv2clientApplication
+
+About this Sample Application
+=============================
+
+This sample application demonstrates how to use the KV2Client API.
+It retrieves data from the server and renders it on a GLFW window.
+
+**for information on how to include KV2Client API in your application, see README in /client 
+**for general information on KV2Streamer, see README at root.
+
+This particular sample application uses glfw and gl to render the frames
+retrieved from KV2Client API, which requires linking to the following libraries:
+	libglfw
+	libGL
+
+and including the following header files:
+	#include <GLFW/glfw3.h>
