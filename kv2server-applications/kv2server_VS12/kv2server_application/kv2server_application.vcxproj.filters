@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{3288e416-fedb-4877-b9e9-2cfb0aa1ae85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\oscpack-wrapper">
+      <UniqueIdentifier>{790f6522-2dac-4ae5-9bec-0b0e06976c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gst-wrapper">
+      <UniqueIdentifier>{7a6e0021-6f6f-44ca-b84b-47715a05f982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\oscpack">
+      <UniqueIdentifier>{237812c8-a0a0-4e48-9027-675490634da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kv2server">
+      <UniqueIdentifier>{21fa15d3-a41f-4915-9103-9110af8b0536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kv2client">
+      <UniqueIdentifier>{e7350c2a-8527-4a32-a82f-fe76a1e0c9fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\kv2server\AbstractMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\AudioMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\BodyIndexMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\BodyMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\ColoredDepthMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\ColorMaskedUsersMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\ColorMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\DepthMulticaster.cpp">
+      <Filter>src\kv2server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\kv2server\KV2Server.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSinkPipeline.cpp">
+      <Filter>src\gst-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSrcPipeline.cpp">
+      <Filter>src\gst-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstPipelineWrapper.cpp">
+      <Filter>src\gst-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscMessage.cpp">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscReceiver.cpp">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscSender.cpp">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\ip\IpEndpointName.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\ip\win32\NetworkingUtils.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\ip\win32\UdpSocket.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\osc\OscReceivedElements.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\osc\OscTypes.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\osc\OscOutboundPacketStream.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\oscpack\osc\OscPrintReceivedElements.cpp">
+      <Filter>src\oscpack</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\kv2server\AbstractMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\AudioMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\BodyIndexMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\BodyMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\ColoredDepthMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\ColorMaskedUsersMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\ColorMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\DepthMulticaster.h">
+      <Filter>src\kv2server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\Utilities.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\kv2server\KV2Server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSinkPipeline.h">
+      <Filter>src\gst-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSrcPipeline.h">
+      <Filter>src\gst-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstPipelineWrapper.h">
+      <Filter>src\gst-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstreamerPipelines.h">
+      <Filter>src\gst-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\kv2client\SharedConfig.h">
+      <Filter>src\kv2client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscWrapper.h">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscMessage.h">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscReceiver.h">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscSender.h">
+      <Filter>src\oscpack-wrapper</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

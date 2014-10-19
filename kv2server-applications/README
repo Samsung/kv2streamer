@@ -1,0 +1,84 @@
+KV2Server: How to Use
+=====================
+
+Unlike it's client-side counterpart, KV2Server is an application on its own.
+Once it is build, you can run the executable from the terminal by supplying 
+a multicast IP argument which will be used to identify the server.
+
+However, you have to run the application from the gstreamer bin directory.
+
+In summary:
+
+1. Build the application using Visual Studio (see instructions below)
+2. Open the command prompt.
+3. Change directory:	$ cd C:\gstreamer\1.0\x86\bin
+4. Run the executable: 	$ [executable path] <multicast-IP>, 
+	for example: 	$ C:\Users\demo\projects\kv2streamer\server\kv2server_VS12\Debug\kv2server_application.exe 224.1.1.1
+
+
+How To Build KV2Streamer
+========================
+
+Requirements:
+1.a Install gstreamer-1.0: 
+[this link seems to install gstreamer-0.1
+http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
+
+Download the following and install them:
+GStreamer SDK 2013.6 (Congo) for Windows 32 bits (Runtime)
+GStreamer SDK 2013.6 (Congo) for Windows 32 bits (Development files)]
+
+1.b or the newer gstreamer 1.4.0 version from here:
+gstreamer-1.0-devel-x86-1.4.0.msi
+gstreamer-1.0-x86-1.4.0.msi
+http://gstreamer.freedesktop.org/data/pkg/windows/
+
+2. Install boost: http://www.boost.org/users/history/version_1_56_0.html
+(*) Open the Visual Studio Solution file in /server/kv2server_VS12
+now and try building. If doesn't work, see below:
+
+**The following instructions should have already been in the project you cloned, but
+in case you need to set things up yourself:
+
+3. Add ALL .cpp files contained in thes following directories to your project (right click on project > Add > Existing Item):
+	server/kv2server
+	shared
+	BUT EXCLUDE shared/oscpack_multicast/oscpack_1_1_0/ip/posix	
+
+4. Configuration Properties > C/C++ > General > Additional Include Directories
+
+	$(SolutionDir)\..\..\..\shared
+	$(SolutionDir)\..\..\..\shared\oscpack_multicast\oscpack_1_1_0
+	
+	C:\Program Files\boost\boost_1_55_0
+
+	$(KINECTSDK20_DIR)\inc
+
+	$(SolutionDir)\..\kv2server
+
+	$(GSTREAMER_1_0_ROOT_X86)\include\gstreamer-1.0
+	$(GSTREAMER_1_0_ROOT_X86)\include\glib-2.0
+	$(GSTREAMER_1_0_ROOT_X86)\lib\glib-2.0\include
+
+5. Configuration Properties > VC++ Directories > Library Directories
+	C:\Program Files\boost\boost_1_55_0\stage\lib
+	$(KINECTSDK20_DIR)\lib\x86
+	$(GSTREAMER_1_0_ROOT_X86)\lib
+
+6. Configuration Properties > Linker > Input
+	Ws2_32.lib
+	winmm.lib
+	kinect20.lib
+	gstreamer-1.0.lib
+	glib-2.0.lib
+	gobject-2.0.lib
+	gmodule-2.0.lib
+	gthread-2.0.lib
+	gstapp-1.0.lib
+
+7. setting up your network
+both machines server (windows 8) and client (ubuntu) will be connected to the same switch
+on windows 8: go to > Control Panel > Network and Sharin Center > Ethernet > Properties > TCPIP/IPv4
+IP address: 192.168.8.2
+Subnet Mask: 255.255.255.0
+Default Gateway: 192.168.8.250

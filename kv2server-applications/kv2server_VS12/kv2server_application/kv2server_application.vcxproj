@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSinkPipeline.cpp" />
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSrcPipeline.cpp" />
+    <ClCompile Include="..\..\..\kv2streamer-lib\gst-wrapper\GstPipelineWrapper.cpp" />
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscMessage.cpp" />
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscReceiver.cpp" />
+    <ClCompile Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscSender.cpp" />
+    <ClCompile Include="..\..\kv2server\AbstractMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\AudioMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\BodyIndexMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\BodyMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\ColoredDepthMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\ColorMaskedUsersMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\ColorMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\DepthMulticaster.cpp" />
+    <ClCompile Include="..\..\kv2server\KV2Server.cpp" />
+    <ClCompile Include="..\..\kv2server\main.cpp" />
+    <ClCompile Include="..\..\oscpack\ip\IpEndpointName.cpp" />
+    <ClCompile Include="..\..\oscpack\ip\win32\NetworkingUtils.cpp" />
+    <ClCompile Include="..\..\oscpack\ip\win32\UdpSocket.cpp" />
+    <ClCompile Include="..\..\oscpack\osc\OscOutboundPacketStream.cpp" />
+    <ClCompile Include="..\..\oscpack\osc\OscPrintReceivedElements.cpp" />
+    <ClCompile Include="..\..\oscpack\osc\OscReceivedElements.cpp" />
+    <ClCompile Include="..\..\oscpack\osc\OscTypes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSinkPipeline.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstAppSrcPipeline.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstPipelineWrapper.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\gst-wrapper\GstreamerPipelines.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\kv2client\SharedConfig.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscMessage.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscReceiver.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscSender.h" />
+    <ClInclude Include="..\..\..\kv2streamer-lib\oscpack-wrapper\oscWrapper.h" />
+    <ClInclude Include="..\..\kv2server\AbstractMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\AudioMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\BodyIndexMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\BodyMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\ColoredDepthMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\ColorMaskedUsersMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\ColorMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\DepthMulticaster.h" />
+    <ClInclude Include="..\..\kv2server\KV2Server.h" />
+    <ClInclude Include="..\..\kv2server\Utilities.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3FDCFC7F-B7E0-4B3B-9FFC-A030BA808306}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>kv2server_application</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\boost\boost_1_55_0\stage\lib;$(KINECTSDK20_DIR)\lib\x86;$(GSTREAMER_1_0_ROOT_X86)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\boost\boost_1_55_0;$(KINECTSDK20_DIR)\inc;$(GSTREAMER_1_0_ROOT_X86)\include\gstreamer-1.0;$(GSTREAMER_1_0_ROOT_X86)\include\glib-2.0;$(GSTREAMER_1_0_ROOT_X86)\lib\glib-2.0\include;$(SolutionDir)\..\kv2server;$(SolutionDir)\..\..\kv2streamer-lib;$(SolutionDir)\..;$(SolutionDir)\..\oscpack;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;winmm.lib;kinect20.lib;gstreamer-1.0.lib;glib-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;gthread-2.0.lib;gstapp-1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
