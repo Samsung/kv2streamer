@@ -50,7 +50,7 @@ in case you need to set things up yourself:
 	$(SolutionDir)\..\..\..\shared
 	$(SolutionDir)\..\..\..\shared\oscpack_multicast\oscpack_1_1_0
 	
-	C:\Program Files\boost\boost_1_55_0
+	C:\Program Files\boost\boost_1_56_0
 
 	$(KINECTSDK20_DIR)\inc
 
@@ -61,7 +61,7 @@ in case you need to set things up yourself:
 	$(GSTREAMER_1_0_ROOT_X86)\lib\glib-2.0\include
 
 5. Configuration Properties > VC++ Directories > Library Directories
-	C:\Program Files\boost\boost_1_55_0\stage\lib
+	C:\Program Files\boost\boost_1_56_0\stage\lib
 	$(KINECTSDK20_DIR)\lib\x86
 	$(GSTREAMER_1_0_ROOT_X86)\lib
 
