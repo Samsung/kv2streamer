@@ -1,3 +1,6 @@
+#NOTE
+We are working hard to release kv2streamer, but it will take some time until all the necessary parts are there, including a detailed and up-to-date installation instructions (yes, README files might be inaccurate). Thank you for your patience!
+
 KV2Streamer
 ===========
 
