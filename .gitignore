@@ -1,1 +1,5 @@
 *~
+.codelite
+*.o
+*.d
+Debug
