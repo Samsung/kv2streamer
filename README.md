@@ -214,6 +214,6 @@ In short, to use KV2Streamer:
 
 # Contact
 Please direct questions and comments to:
-	kvnwinata@gmail and anette.vk@samsung.com
+	kvnwinata@gmail.com and anette.vk@samsung.com
 
 
