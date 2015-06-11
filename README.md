@@ -181,7 +181,7 @@ To use the client API of KV2Streamer, perform the following steps on your Ubuntu
 
 And you should be all set!
 
-### 2.2 Sample Build Instructions: Codelite
+### 2.2 Sample Build Instructions for Codelite
 
 A sample application, which you can find in /sample-client-applications, is provided so that you can test the library quickly. Follow the steps below to run the sample application.
 
@@ -189,7 +189,15 @@ A sample application, which you can find in /sample-client-applications, is prov
   2. Install glfw: http://www.glfw.org/
   3. Run the sample application. You should be able to see live camera image (color, depth, skeleton, etc.) from the server.
 
-If you decide to create a new projects on codelite from scratch, you must do the steps described above, PLUS you have to link to the following libraries:  libGL, libglfw.
+If you decide to create a new projects on codelite from scratch, you must do the steps described above, PLUS you have to link to the following libraries:  `libGL`, `libglfw`, and include the following header files: `#include <GLFW/glfw3.h>`.
+
+
+Important note: to run the executable, open the terminal, then:
+
+  1. Navigate to the executable director: usually /Debug
+  2. Run the following once: $ export LD_LIBRARY_PATH="/usr/local/lib"
+  3. Run the executable: $ ./kv2clientApplication
+
 
 ---
 # Summary
